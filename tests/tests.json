@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Navigate from the hero to selected work",
+    "sanity": true,
+    "viewport": "desktop",
+    "covers": [
+      "hero call to action navigation",
+      "selected work section anchor"
+    ],
+    "description": "Verifies the main portfolio navigation takes a visitor from the hero to the work section.",
+    "steps": [
+      "Open the portfolio home page",
+      "Select the Explore my work link",
+      "Observe the selected work section"
+    ],
+    "expected": "The page navigates to the selected work section and the Genevieve Goings case study is visible."
+  },
+  {
+    "name": "Open and use the mobile navigation",
+    "viewport": "mobile",
+    "covers": ["responsive mobile navigation", "mobile menu open and close"],
+    "description": "Verifies the navigation menu is usable on a narrow mobile viewport.",
+    "steps": [
+      "Open the portfolio at mobile width",
+      "Open the navigation menu",
+      "Select About",
+      "Open the navigation menu again and close it"
+    ],
+    "expected": "The mobile menu opens, the About section is reached, and the menu can be opened and closed without layout overflow."
+  },
+  {
+    "name": "Validate and submit a project enquiry",
+    "viewport": "desktop",
+    "covers": [
+      "contact form required-field validation",
+      "project enquiry handoff to WhatsApp"
+    ],
+    "description": "Verifies required contact fields are enforced and a complete enquiry is prepared for WhatsApp.",
+    "steps": [
+      "Navigate to the project enquiry form",
+      "Submit the form with required fields empty",
+      "Enter a name, valid email and project message",
+      "Submit the completed form"
+    ],
+    "expected": "The empty form is blocked with required-field validation; a completed enquiry opens a WhatsApp message containing the submitted details."
+  },
+  {
+    "name": "Use the contact links on a mobile device",
+    "viewport": "mobile",
+    "covers": [
+      "mobile contact links",
+      "WhatsApp and discovery call contact paths"
+    ],
+    "description": "Verifies the contact section exposes working external contact destinations on mobile.",
+    "steps": [
+      "Navigate to the contact section",
+      "Select the WhatsApp contact link",
+      "Return and select the discovery call link"
+    ],
+    "expected": "The WhatsApp link points to the supplied business contact and the discovery call link points to the supplied Calendly booking page."
+  }
+]
