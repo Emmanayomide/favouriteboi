@@ -1336,3 +1336,27 @@ h2 span {
     padding: 27px 17px;
   }
 }
+
+.seo-page-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 22px;
+  margin-top: 28px;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.018);
+}
+.seo-page-links > span {
+  width: 100%;
+  color: #737b84;
+  font: 8px var(--mono);
+  letter-spacing: .1em;
+}
+.seo-page-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--accent);
+  font-size: 11px;
+}
