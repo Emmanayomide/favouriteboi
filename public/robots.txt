@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://emmanayomide.github.io/favouriteboi/sitemap.xml
