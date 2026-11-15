@@ -214,8 +214,9 @@ function App() {
               <span>More room to grow.</span>
             </h1>
             <p className="hero-lede">
-              I design CRM systems and business automations that help teams
-              capture leads, follow up consistently and run smoother operations.
+              I help businesses and agencies configure GoHighLevel CRM systems,
+              build reliable workflow automations and connect the tools behind
+              lead capture, follow-up and appointment booking.
             </p>
             <div className="hero-actions">
               <a
@@ -384,6 +385,13 @@ function App() {
               );
             })}
           </div>
+          <div className="seo-page-links">
+            <span>EXPLORE GOHIGHLEVEL SERVICES</span>
+            <a href="/favouriteboi/gohighlevel-expert/">GoHighLevel expert services <ArrowUpRight size={14} /></a>
+            <a href="/favouriteboi/gohighlevel-crm-setup/">CRM setup <ArrowUpRight size={14} /></a>
+            <a href="/favouriteboi/gohighlevel-automation/">Workflow automation <ArrowUpRight size={14} /></a>
+            <a href="/favouriteboi/gohighlevel-funnels/">Funnels & landing pages <ArrowUpRight size={14} /></a>
+          </div>
         </section>
 
         <section className="work-section" id="work">
@@ -503,6 +511,9 @@ function App() {
                     or typical result.
                   </span>
                 </div>
+                <a className="case-link" href="/favouriteboi/case-studies/genevieve-goings/">
+                  Read the project case study <ArrowUpRight size={16} />
+                </a>
                 <a
                   className="case-link"
                   href={WHATSAPP}
@@ -585,6 +596,9 @@ function App() {
                 an existing process, I aim to make the technology useful,
                 understandable and easier to manage.
               </p>
+              <a className="text-link about-link" href="/favouriteboi/about/">
+                Read more about Emmanuel Ayomide <ArrowUpRight size={16} />
+              </a>
               <a
                 className="text-link about-link"
                 href={CALENDLY}
