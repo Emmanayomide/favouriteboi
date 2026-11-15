@@ -214,9 +214,9 @@ function App() {
               <span>More room to grow.</span>
             </h1>
             <p className="hero-lede">
-              I help businesses and agencies configure GoHighLevel CRM systems,
-              build reliable workflow automations and connect the tools behind
-              lead capture, follow-up and appointment booking.
+              As a GoHighLevel expert and CRM automation specialist, I help
+              businesses and agencies configure their CRM, build reliable
+              workflows and connect lead capture, follow-up and booking.
             </p>
             <div className="hero-actions">
               <a
