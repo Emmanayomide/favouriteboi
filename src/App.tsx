@@ -385,13 +385,6 @@ function App() {
               );
             })}
           </div>
-          <div className="seo-page-links">
-            <span>EXPLORE GOHIGHLEVEL SERVICES</span>
-            <a href="/favouriteboi/gohighlevel-expert/">GoHighLevel expert services <ArrowUpRight size={14} /></a>
-            <a href="/favouriteboi/gohighlevel-crm-setup/">CRM setup <ArrowUpRight size={14} /></a>
-            <a href="/favouriteboi/gohighlevel-automation/">Workflow automation <ArrowUpRight size={14} /></a>
-            <a href="/favouriteboi/gohighlevel-funnels/">Funnels & landing pages <ArrowUpRight size={14} /></a>
-          </div>
         </section>
 
         <section className="work-section" id="work">
@@ -406,15 +399,36 @@ function App() {
                 </h2>
               </div>
               <p>
-                Examples of the CRM structures, automations, funnels and integrations I can plan and implement. Each sample explains the business problem it is designed to solve.
+                A look at selected CRM, funnel and campaign work. I share the
+                scope clearly and keep project outcomes grounded in what was
+                actually delivered and measured.
               </p>
             </div>
-            <div className="home-sample-grid">
-              <article className="home-sample-card"><img src="/favouriteboi/assets/crm-pipeline.svg" alt="Illustrative CRM pipeline dashboard" /><div><span>01 / CRM FOUNDATION</span><h3>Lead management CRM</h3><p>Organized contacts, pipeline stages, custom fields and opportunity tracking.</p></div></article>
-              <article className="home-sample-card"><img src="/favouriteboi/assets/lead-automation.svg" alt="Illustrative automated lead follow-up workflow" /><div><span>02 / WORKFLOW AUTOMATION</span><h3>Lead response and nurture</h3><p>Timely email and SMS follow-up, reminders, routing and internal alerts.</p></div></article>
-              <article className="home-sample-card"><img src="/favouriteboi/assets/funnel-booking.svg" alt="Illustrative lead capture and booking funnel" /><div><span>03 / FUNNELS & BOOKINGS</span><h3>Lead capture to appointment</h3><p>Landing pages, forms, calendars and connected booking journeys.</p></div></article>
+            <div className="portfolio-work-grid">
+              <article className="portfolio-work-card">
+                <div className="portfolio-work-image">
+                  <img src="/favouriteboi/assets/booking-experience.png" alt="Screenshot of a service booking page with calendar scheduling" />
+                </div>
+                <div className="portfolio-work-copy">
+                  <span>BOOKING EXPERIENCE / CALENDAR SETUP</span>
+                  <h3>Appointment booking journey</h3>
+                  <p>A service page and scheduling experience that gives visitors a clear next step, captures appointment requests and connects booking with the wider follow-up process.</p>
+                  <div className="tag-list"><span>Landing pages</span><span>Calendars</span><span>Forms</span></div>
+                </div>
+              </article>
+              <article className="portfolio-work-card">
+                <div className="portfolio-work-image">
+                  <img src="/favouriteboi/assets/lead-followup-workflow.png" alt="Screenshot of a GoHighLevel workflow with form trigger, tagging, notification and email steps" />
+                </div>
+                <div className="portfolio-work-copy">
+                  <span>GOHIGHLEVEL / WORKFLOW AUTOMATION</span>
+                  <h3>Lead response and follow-up</h3>
+                  <p>A workflow built around a form submission, with contact tagging, internal notifications, timed steps and email follow-up to help teams respond consistently.</p>
+                  <div className="tag-list"><span>GoHighLevel</span><span>Email automation</span><span>Lead management</span></div>
+                </div>
+              </article>
             </div>
-            <div className="home-work-cta"><a className="case-link" href="/favouriteboi/work-samples/">Explore all work samples <ArrowUpRight size={16} /></a><a className="case-link" href={WHATSAPP} target="_blank" rel="noreferrer">Discuss a similar system <ArrowUpRight size={16} /></a></div>
+            <div className="work-scope-note">Selected implementation snapshots. Project scope and responsibilities are described accurately and can be discussed during discovery.</div>  </article>
             <div className="work-footnote">
               <span>MORE PROJECTS ARE SHARED DURING DISCOVERY</span>
               <span>SELECTED EXPERIENCE / 2026</span>
@@ -456,14 +470,12 @@ function App() {
         <section className="about-section" id="about">
           <div className="section-wrap about-inner">
             <div className="about-art">
-              <div className="about-monogram">
-                EA<span>.</span>
-              </div>
+              <img className="about-photo" src="/favouriteboi/assets/emmanuel-headshot.jpg" alt="Portrait of Emmanuel Ayomide" />
+              <div className="about-photo-shade" />
               <div className="about-art-caption">
-                <span>INDEPENDENT SPECIALIST</span>
+                <span>EMMANUEL AYOMIDE</span>
                 <span>ABUJA, NIGERIA / WORLDWIDE</span>
               </div>
-              <div className="about-ring" />
             </div>
             <div className="about-copy">
               <div className="section-kicker">04 — A LITTLE ABOUT ME</div>
@@ -487,9 +499,6 @@ function App() {
                 an existing process, I aim to make the technology useful,
                 understandable and easier to manage.
               </p>
-              <a className="text-link about-link" href="/favouriteboi/about/">
-                Read more about Emmanuel Ayomide <ArrowUpRight size={16} />
-              </a>
               <a
                 className="text-link about-link"
                 href={CALENDLY}
