@@ -1377,3 +1377,5 @@ h2 span {
 .about-photo-shade{position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,11,13,.78),transparent 52%);z-index:-1}
 .about-art-caption{z-index:1;color:#f0f1ed}
 @media(max-width:760px){.portfolio-work-grid{grid-template-columns:1fr}.portfolio-work-image{height:230px}.portfolio-work-copy{padding:21px}.about-art{height:330px}}
+
+/* Rebuild after premium visual refresh */
