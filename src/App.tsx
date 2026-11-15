@@ -406,124 +406,15 @@ function App() {
                 </h2>
               </div>
               <p>
-                A look at selected CRM, funnel and campaign work. I share the
-                scope clearly and keep project outcomes grounded in what was
-                actually delivered and measured.
+                Examples of the CRM structures, automations, funnels and integrations I can plan and implement. Each sample explains the business problem it is designed to solve.
               </p>
             </div>
-            <article className="case-study">
-              <div className="case-visual">
-                <div className="case-window">
-                  <div className="case-window-bar">
-                    <span />
-                    <span />
-                    <span />
-                    <small>CAMPAIGN / PERFORMANCE SNAPSHOT</small>
-                  </div>
-                  <div className="case-window-title">
-                    <small>EMAIL CAMPAIGN</small>
-                    <strong>Agent-Ready Audition Bundle</strong>
-                    <span>Campaign reporting · Aug 17–23, 2026</span>
-                  </div>
-                  <div className="metric-grid">
-                    <div>
-                      <small>DELIVERED</small>
-                      <strong>279</strong>
-                      <span>Emails delivered</span>
-                    </div>
-                    <div>
-                      <small>OPEN RATE</small>
-                      <strong>
-                        34.77<span>%</span>
-                      </strong>
-                      <span>97 opens</span>
-                    </div>
-                    <div>
-                      <small>BOUNCED</small>
-                      <strong>3</strong>
-                      <span>Emails bounced</span>
-                    </div>
-                  </div>
-                  <div className="case-chart">
-                    <div className="chart-label">
-                      <span>CAMPAIGN ENGAGEMENT</span>
-                      <span>REPORTED METRICS</span>
-                    </div>
-                    <div className="chart-bars">
-                      <i style={{ height: '36%' }} />
-                      <i style={{ height: '58%' }} />
-                      <i style={{ height: '43%' }} />
-                      <i style={{ height: '78%' }} />
-                      <i style={{ height: '62%' }} />
-                      <i style={{ height: '91%' }} />
-                      <i style={{ height: '70%' }} />
-                      <i style={{ height: '100%' }} />
-                      <i style={{ height: '76%' }} />
-                      <i style={{ height: '88%' }} />
-                      <i style={{ height: '56%' }} />
-                      <i style={{ height: '72%' }} />
-                    </div>
-                  </div>
-                  <div className="case-window-foot">
-                    <span>
-                      <i /> CAMPAIGN DATA
-                    </span>
-                    <span>NO UNSUBSCRIBES REPORTED</span>
-                  </div>
-                </div>
-                <div className="case-stamp">
-                  <Sparkles size={15} /> BUILT WITH PURPOSE
-                </div>
-              </div>
-              <div className="case-content">
-                <div className="case-label">
-                  CLIENT PROJECT / CREATOR EDUCATION
-                </div>
-                <h3>Genevieve Goings</h3>
-                <p className="case-intro">
-                  CRM and funnel implementation support for a voiceover
-                  education brand.
-                </p>
-                <div className="case-divider" />
-                <h4>Project scope</h4>
-                <ul className="case-list">
-                  <li>
-                    <Check size={15} /> GoHighLevel funnel and landing page
-                    buildout
-                  </li>
-                  <li>
-                    <Check size={15} /> Email audience migration and
-                    organization support
-                  </li>
-                  <li>
-                    <Check size={15} /> Campaign setup and performance tracking
-                  </li>
-                  <li>
-                    <Check size={15} /> Booking journey and calendar
-                    configuration
-                  </li>
-                </ul>
-                <div className="case-note">
-                  <strong>Measured campaign snapshot</strong>
-                  <span>
-                    279 delivered · 97 opens · 34.77% open rate · 3 bounced.
-                    Reported for Aug 17–23, 2026; not presented as a guaranteed
-                    or typical result.
-                  </span>
-                </div>
-                <a className="case-link" href="/favouriteboi/case-studies/genevieve-goings/">
-                  Read the project case study <ArrowUpRight size={16} />
-                </a>
-                <a
-                  className="case-link"
-                  href={WHATSAPP}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Discuss a similar system <ArrowUpRight size={16} />
-                </a>
-              </div>
-            </article>
+            <div className="home-sample-grid">
+              <article className="home-sample-card"><img src="/favouriteboi/assets/crm-pipeline.svg" alt="Illustrative CRM pipeline dashboard" /><div><span>01 / CRM FOUNDATION</span><h3>Lead management CRM</h3><p>Organized contacts, pipeline stages, custom fields and opportunity tracking.</p></div></article>
+              <article className="home-sample-card"><img src="/favouriteboi/assets/lead-automation.svg" alt="Illustrative automated lead follow-up workflow" /><div><span>02 / WORKFLOW AUTOMATION</span><h3>Lead response and nurture</h3><p>Timely email and SMS follow-up, reminders, routing and internal alerts.</p></div></article>
+              <article className="home-sample-card"><img src="/favouriteboi/assets/funnel-booking.svg" alt="Illustrative lead capture and booking funnel" /><div><span>03 / FUNNELS & BOOKINGS</span><h3>Lead capture to appointment</h3><p>Landing pages, forms, calendars and connected booking journeys.</p></div></article>
+            </div>
+            <div className="home-work-cta"><a className="case-link" href="/favouriteboi/work-samples/">Explore all work samples <ArrowUpRight size={16} /></a><a className="case-link" href={WHATSAPP} target="_blank" rel="noreferrer">Discuss a similar system <ArrowUpRight size={16} /></a></div>
             <div className="work-footnote">
               <span>MORE PROJECTS ARE SHARED DURING DISCOVERY</span>
               <span>SELECTED EXPERIENCE / 2026</span>
