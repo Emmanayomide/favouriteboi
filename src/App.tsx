@@ -41,7 +41,7 @@ function App() {
       <a className="brand" href="#home" onClick={closeMenu}><span className="brand-symbol">EA<span>.</span></span><span><strong>EMMANUEL AYOMIDE</strong><small>CRM & BUSINESS AUTOMATION</small></span></a>
       <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle navigation">{menuOpen ? <X /> : <Menu />}</button>
       <nav className={menuOpen ? 'main-nav open' : 'main-nav'} aria-label="Main navigation">
-        <a href="#home" onClick={closeMenu}>Home</a><a href="#about" onClick={closeMenu}>About</a><a href="#services" onClick={closeMenu}>Services</a><a href="#projects" onClick={closeMenu}>Projects</a><a href="#testimonials" onClick={closeMenu}>Testimonials</a><a className="nav-contact" href="#contact" onClick={closeMenu}>Contact <ArrowUpRight size={15}/></a>
+        <a href="/favouriteboi/">Home</a><a href="/favouriteboi/about/">About</a><a href="/favouriteboi/services/">Services</a><a href="/favouriteboi/portfolio/">Portfolio</a><a href="/favouriteboi/testimonials/">Testimonials</a><a className="nav-contact" href="/favouriteboi/contact/">Contact <ArrowUpRight size={15}/></a>
       </nav>
     </header>
 
