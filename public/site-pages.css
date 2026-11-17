@@ -147,3 +147,13 @@
 .testimonials-cta .btn{white-space:nowrap;margin:0}
 @media(max-width:760px){.sample-grid{grid-template-columns:1fr 1fr}.sample-card{min-height:300px}.review-banner{grid-template-columns:1fr .45fr}}
 @media(max-width:560px){.testimonials-hero{padding:42px 0 27px}.review-banner{grid-template-columns:1fr;margin-bottom:42px}.review-banner-copy{padding:25px}.review-banner-side{min-height:90px;padding:18px 25px;flex-direction:row;align-items:center}.sample-heading{align-items:flex-start;flex-direction:column}.sample-grid{grid-template-columns:1fr}.sample-card{min-height:260px}.sample-icon{margin:22px 0 16px}.testimonials-cta{align-items:flex-start;flex-direction:column;padding:22px}}
+
+/* Testimonials cards final tidy-up */
+.testimonials-hero{padding-bottom:30px}
+.sample-section{padding-top:0}
+.sample-heading{margin-bottom:23px}
+.sample-heading h2{max-width:560px}
+.sample-card{min-height:315px;border-radius:3px}
+.sample-card-bottom strong{font-size:9px;line-height:1.6}
+.sample-card>p{max-width:320px}
+@media(max-width:760px){.sample-card{min-height:280px}}
