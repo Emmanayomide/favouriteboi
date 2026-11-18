@@ -3,7 +3,7 @@ import { ArrowUpRight, Menu, X, Workflow, Layers, CalendarDays, Plug, Bot, BarCh
 
 const WHATSAPP = 'https://wa.me/2347075246775';
 const EMAIL = 'mailto:emmanayomide27@gmail.com';
-const LINKEDIN = 'https://www.linkedin.com/in/emmanuel-ayomide-2';
+const LINKEDIN = 'https://www.linkedin.com/in/emmanuel-ayomide-2a2111414';
 const UPWORK = 'https://www.upwork.com/freelancers/~0177763eb9f5b6498c';
 const CALENDLY = 'https://calendly.com/emmanuelautomationhub/new-meeting';
 
