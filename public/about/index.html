@@ -1,44 +1,158 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>About | Emmanuel Ayomide</title>
-  <meta name="description" content="Meet Emmanuel Ayomide, a CRM and Business Automation Specialist focused on GoHighLevel, workflow automation and connected business systems.">
-  <link rel="canonical" href="https://emmanayomide.github.io/favouriteboi/about/">
-  <link rel="stylesheet" href="/favouriteboi/site-pages.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>About Emmanuel Ayomide | CRM & Business Automation Specialist</title>
+<meta name="description" content="Get to know Emmanuel Ayomide, a CRM & Business Automation Specialist helping businesses build better GoHighLevel systems, automate follow-up, connect tools and improve customer journeys.">
+<link rel="canonical" href="https://emmanayomide.github.io/favouriteboi/about/">
+<link rel="stylesheet" href="/favouriteboi/site-pages.css?v=20261119-about2">
+<style>
+.about-page{--ink:#20372a;--muted:#68766d;--line:#e2e9e2;--green:#315b45;--pale:#f0f4f0}
+.about-hero{padding:68px 0 56px;display:grid;grid-template-columns:1.15fr .85fr;gap:54px;align-items:center;border-bottom:1px solid var(--line)}
+.about-hero h1{font:800 clamp(42px,6vw,68px)/1.02 Manrope,sans-serif;letter-spacing:-.065em;margin:16px 0 18px;max-width:720px;color:#1e3327}
+.about-hero h1 em{font-style:normal;color:#52745e}
+.about-hero-copy>p{font-size:14px;line-height:1.95;color:var(--muted);max-width:650px;margin:0}
+.about-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:23px}
+.about-text-link{font-size:11px;font-weight:700;color:var(--green);padding:11px 4px;border-bottom:1px solid #b8cabb}
+.about-portrait{position:relative;max-width:410px;justify-self:end;width:100%;padding:0 0 18px 18px}
+.about-portrait:before{content:"";position:absolute;left:0;bottom:0;width:70%;height:72%;background:#e9f0e9;z-index:0}
+.about-portrait img{position:relative;z-index:1;display:block;width:100%;aspect-ratio:4/4.5;object-fit:cover;object-position:center 28%;background:#edf2ed}
+.about-portrait figcaption{position:absolute;z-index:2;right:-8px;bottom:35px;background:#203d30;color:white;padding:13px 17px;font-size:9px;letter-spacing:.12em;font-weight:800}
+.about-section{padding:58px 0;border-bottom:1px solid var(--line)}
+.about-section-heading{display:grid;grid-template-columns:.72fr 1.28fr;gap:42px;margin-bottom:28px}
+.about-section-heading h2,.about-story h2,.about-approach h2,.about-education h2,.about-cta h2{font:700 clamp(26px,3.5vw,39px)/1.13 Manrope,sans-serif;letter-spacing:-.05em;margin:9px 0;color:#20372a}
+.about-section-heading p,.about-story p,.about-approach p,.about-education p,.about-cta p{font-size:13px;line-height:1.95;color:var(--muted);margin:0 0 13px}
+.about-story{display:grid;grid-template-columns:.72fr 1.28fr;gap:42px}
+.about-story-aside{background:#203d30;color:white;padding:25px;align-self:start}
+.about-story-aside span{font-size:8px;letter-spacing:.15em;font-weight:800;color:#b9d0bd}
+.about-story-aside strong{display:block;font:700 23px/1.2 Manrope,sans-serif;letter-spacing:-.04em;margin:17px 0 10px}
+.about-story-aside p{font-size:11px;line-height:1.8;color:#d0ddd2;margin:0}
+.about-story-copy h2{margin-top:0}
+.about-story-copy p{max-width:760px}
+.about-values{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
+.about-value{border-top:1px solid #cfdccf;padding:15px 2px 0}
+.about-value b{font:700 10px Manrope,sans-serif;color:#52745e}
+.about-value h3{font:700 14px Manrope,sans-serif;margin:9px 0 6px;color:#263a2d}
+.about-value p{font-size:10px;line-height:1.8;color:var(--muted);margin:0}
+.about-services-intro{max-width:700px;margin:-4px 0 25px}
+.about-services-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.about-service{background:#fff;border:1px solid var(--line);padding:23px;min-height:210px}
+.about-service-top{display:flex;align-items:center;justify-content:space-between}
+.about-service-top span:first-child{font:700 10px Manrope,sans-serif;color:#52745e}
+.about-service-top span:last-child{font-size:8px;letter-spacing:.12em;color:#829087;font-weight:800}
+.about-service h3{font:700 18px/1.25 Manrope,sans-serif;letter-spacing:-.03em;margin:17px 0 9px;color:#263a2d}
+.about-service p{font-size:11px;line-height:1.85;color:var(--muted);margin:0}
+.about-service ul{padding-left:16px;margin:11px 0 0}
+.about-service li{font-size:10px;line-height:1.8;color:#68766d;padding:1px 0}
+.about-stack{display:grid;grid-template-columns:.72fr 1.28fr;gap:42px;align-items:start}
+.about-stack h2{font:700 clamp(26px,3.5vw,39px)/1.13 Manrope,sans-serif;letter-spacing:-.05em;margin:9px 0;color:#20372a}
+.about-stack p{font-size:13px;line-height:1.9;color:var(--muted);margin:0}
+.stack-groups{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.stack-group{background:#f2f5f2;padding:19px}
+.stack-group small{display:block;font-size:8px;letter-spacing:.13em;font-weight:800;color:#708075;margin-bottom:10px}
+.stack-group strong{font:700 12px/1.8 Manrope,sans-serif;color:#34483a}
+.about-approach{display:grid;grid-template-columns:.72fr 1.28fr;gap:42px}
+.about-steps{display:grid;grid-template-columns:repeat(2,1fr);gap:20px 24px}
+.about-step{border-top:1px solid #cfdccf;padding-top:14px}
+.about-step b{font:700 10px Manrope,sans-serif;color:#52745e}
+.about-step h3{font:700 15px Manrope,sans-serif;margin:8px 0 6px;color:#263a2d}
+.about-step p{font-size:10px;line-height:1.8;margin:0}
+.about-education{display:grid;grid-template-columns:.72fr 1.28fr;gap:42px;align-items:start}
+.education-card{display:flex;justify-content:space-between;gap:20px;align-items:center;background:#f0f4f0;border:1px solid #e1e9e1;padding:23px}
+.education-card strong{display:block;font:700 17px Manrope,sans-serif;color:#263a2d}
+.education-card span{display:block;font-size:11px;color:#68766d;margin-top:6px}
+.education-year{font:800 23px Manrope,sans-serif;color:#52745e;white-space:nowrap}
+.about-cta{display:flex;align-items:center;justify-content:space-between;gap:28px;background:#203d30;color:white;padding:34px;margin:42px 0 70px}
+.about-cta .eyebrow{color:#b9d0bd}
+.about-cta h2{color:white;max-width:660px;margin:10px 0}
+.about-cta p{color:#d0ddd2;max-width:610px;margin:0}
+.about-cta .btn{background:white;color:#203d30;white-space:nowrap;margin:0}
+.about-reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.about-reveal.is-visible{opacity:1;transform:translateY(0)}
+@media(max-width:760px){.about-hero{grid-template-columns:1fr;gap:28px;padding:45px 0 38px}.about-portrait{justify-self:start;max-width:340px}.about-section{padding:40px 0}.about-section-heading,.about-story,.about-stack,.about-approach,.about-education{grid-template-columns:1fr;gap:18px}.about-services-grid{grid-template-columns:1fr}.about-values{grid-template-columns:1fr;gap:18px}.about-cta{align-items:flex-start;flex-direction:column;padding:25px;margin:30px 0 48px}}
+@media(max-width:520px){.stack-groups{grid-template-columns:1fr}.about-steps{grid-template-columns:1fr}.education-card{align-items:flex-start;flex-direction:column}.about-hero h1{font-size:43px}}
+@media(prefers-reduced-motion:reduce){.about-reveal{opacity:1;transform:none;transition:none}}
+</style>
 </head>
 <body>
-  <header class="top"><div class="wrap top-inner">
-    <a class="brand" href="/favouriteboi/">EA. EMMANUEL AYOMIDE<small>CRM & BUSINESS AUTOMATION</small></a>
-    <nav class="nav" aria-label="Main navigation">
-      <a href="/favouriteboi/">Home</a><a class="active" href="/favouriteboi/about/">About</a><a href="/favouriteboi/services/">Services</a><a href="/favouriteboi/portfolio/">Portfolio</a><a href="/favouriteboi/testimonials/">Testimonials</a><a href="/favouriteboi/contact/">Contact</a>
-    </nav>
-  </div></header>
-  <main class="wrap">
-    <section class="hero">
-      <div class="eyebrow">ABOUT / EMMANUEL AYOMIDE</div>
-      <h1>Practical systems. Thoughtful automation.</h1>
-      <p>I'm Emmanuel Ayomide, a CRM & Business Automation Specialist helping businesses organise customer relationships, simplify everyday processes and get more from their technology.</p>
-    </section>
-    <section class="content">
-      <div style="display:grid;grid-template-columns:minmax(160px,220px) 1fr;gap:32px;align-items:start">
-        <img src="../assets/emmanuel-ayomide-headshot.webp?v=5" alt="Portrait of Emmanuel Ayomide" style="display:block;width:100%;aspect-ratio:1/1;object-fit:cover;object-position:center 28%;border-radius:3px">
-        <div>
-          <h2 style="font:700 23px Manrope,sans-serif;margin:0 0 12px">A little about me</h2>
-          <p>I work primarily with GoHighLevel, building CRM setups, pipelines, automated follow-ups, funnels and booking systems. I also connect business tools using platforms such as Make.com, Twilio, Mailgun and other integrations.</p>
-          <p>My approach is straightforward: understand the business need, build a suitable solution, and test it so the system is practical to use and manage.</p>
-          <p><strong>Education:</strong> B.Tech Chemical Engineering, LAUTECH, 2023.</p>
-          <a class="btn" href="/favouriteboi/contact/">Let's talk</a>
-        </div>
-      </div>
-      <div class="note"><strong>Core focus:</strong> GoHighLevel CRM · Workflow automation · Funnels and booking systems · Integrations · CRM migration</div>
-    </section>
-  </main>
-  <footer class="foot"><div class="wrap">Emmanuel Ayomide · CRM & Business Automation Specialist
-    <div class="footnav"><a href="/favouriteboi/">Home</a><a href="/favouriteboi/about/">About</a><a href="/favouriteboi/services/">Services</a><a href="/favouriteboi/portfolio/">Portfolio</a><a href="/favouriteboi/testimonials/">Testimonials</a><a href="/favouriteboi/contact/">Contact</a><a href="https://www.linkedin.com/in/emmanuel-ayomide-2a2111414">LinkedIn</a><a href="https://www.upwork.com/freelancers/~0177763eb9f5b6498c">Upwork</a></div>
-    <p>© 2026 Emmanuel Ayomide</p>
-  </div></footer>
-  <style>@media(max-width:700px){main .content>div:first-child{grid-template-columns:1fr!important}main .content>div:first-child img{max-width:180px}}</style>
-</body>
-</html>
+<header class="top"><div class="wrap top-inner">
+<a class="brand" href="/favouriteboi/">EA. EMMANUEL AYOMIDE<small>CRM & BUSINESS AUTOMATION</small></a>
+<nav class="nav" aria-label="Main navigation"><a href="/favouriteboi/">Home</a><a class="active" href="/favouriteboi/about/">About</a><a href="/favouriteboi/services/">Services</a><a href="/favouriteboi/portfolio/">Portfolio</a><a href="/favouriteboi/testimonials/">Testimonials</a><a href="/favouriteboi/contact/">Contact</a></nav>
+</div></header>
+<main class="wrap about-page">
+<section class="about-hero">
+<div class="about-hero-copy about-reveal">
+<div class="eyebrow">ABOUT / EMMANUEL AYOMIDE</div>
+<h1>I build the systems that help businesses <em>move forward.</em></h1>
+<p>I'm Emmanuel Ayomide, a CRM & Business Automation Specialist focused on helping businesses organise leads, improve customer follow-up and connect the digital tools behind their day-to-day operations. My work brings together CRM strategy, GoHighLevel implementation, workflow automation and practical digital experiences — with the goal of making business processes clearer, more consistent and easier to manage.</p>
+<div class="about-actions"><a class="btn" href="/favouriteboi/contact/">Let's discuss your project</a><a class="about-text-link" href="/favouriteboi/portfolio/">Explore selected work ↗</a></div>
+</div>
+<figure class="about-portrait about-reveal"><img src="/favouriteboi/assets/emmanuel-ayomide-headshot.webp?v=5" alt="Portrait of Emmanuel Ayomide"><figcaption>CRM · AUTOMATION · SYSTEMS</figcaption></figure>
+</section>
+
+<section class="about-section about-story">
+<aside class="about-story-aside about-reveal"><span>THE PERSON BEHIND THE WORK</span><strong>Technology should make work simpler — not create more work.</strong><p>That belief guides how I approach every CRM setup, automation and integration.</p></aside>
+<div class="about-story-copy about-reveal">
+<div class="eyebrow">MY STORY & WORKING MINDSET</div>
+<h2>More than setting up software. I focus on how the business actually works.</h2>
+<p>Every business has a series of important interactions: someone discovers the business, makes an enquiry, receives a response, books a call, becomes a customer and hopefully returns. When those steps are scattered across spreadsheets, inboxes, calendars and disconnected applications, it becomes harder to keep track of people and deliver a consistent experience.</p>
+<p>That is the kind of operational challenge I enjoy working on. I look at the journey from the first enquiry to the next meaningful action, then help put the right structure in place. That may mean organising contacts and sales stages in GoHighLevel, building an automated follow-up sequence, connecting a booking calendar, or making two business applications share information reliably.</p>
+<p>I approach projects with curiosity, attention to detail and a practical mindset. I want to understand what the business needs before recommending a tool or building a workflow. A system should solve a real problem, be understandable to the people using it and be maintainable after implementation.</p>
+<div class="about-values">
+<div class="about-value"><b>01 / CLARITY</b><h3>Make the process visible</h3><p>Organise information and stages so people can understand what is happening and what needs attention.</p></div>
+<div class="about-value"><b>02 / USEFULNESS</b><h3>Automate with purpose</h3><p>Use automation to remove repetitive steps and support timely, relevant communication.</p></div>
+<div class="about-value"><b>03 / RELIABILITY</b><h3>Test the full journey</h3><p>Check triggers, conditions, messages and handoffs instead of assuming a workflow works.</p></div>
+</div>
+</div>
+</section>
+
+<section class="about-section">
+<div class="about-section-heading about-reveal"><div><div class="eyebrow">WHAT I BRING TO A PROJECT</div><h2>Connected business systems, from first enquiry to follow-up.</h2></div><p class="about-services-intro">My core specialisation is CRM and business automation, with GoHighLevel as a primary platform. I can support an individual workflow or bring several connected parts together into a more organised customer-management system.</p></div>
+<div class="about-services-grid">
+<article class="about-service about-reveal"><div class="about-service-top"><span>01</span><span>CRM FOUNDATION</span></div><h3>GoHighLevel CRM setup & configuration</h3><p>I configure GoHighLevel around the way a business manages leads and customers, creating a practical structure for day-to-day use.</p><ul><li>Account setup and CRM customisation</li><li>Contacts, tags, custom fields and segmentation</li><li>Sales pipelines, opportunity stages and ownership</li><li>Snapshots, account organisation and cleanup</li></ul></article>
+<article class="about-service about-reveal"><div class="about-service-top"><span>02</span><span>WORKFLOW AUTOMATION</span></div><h3>Lead follow-up & customer communication</h3><p>I build event-based workflows that help businesses respond consistently and keep conversations moving without relying on every task being done manually.</p><ul><li>Email and SMS nurture sequences</li><li>Missed-call text-back and lead response</li><li>Appointment reminders and internal alerts</li><li>Conditional paths, wait steps and re-engagement</li></ul></article>
+<article class="about-service about-reveal"><div class="about-service-top"><span>03</span><span>LEAD GENERATION</span></div><h3>Funnels, landing pages & forms</h3><p>I create connected lead-capture journeys that give visitors a clear next step and send submitted information into the right CRM process.</p><ul><li>Landing pages and funnel steps</li><li>Forms, surveys and opt-in experiences</li><li>Lead Ads connection and contact syncing</li><li>Thank-you pages and post-submission journeys</li></ul></article>
+<article class="about-service about-reveal"><div class="about-service-top"><span>04</span><span>BOOKING SYSTEMS</span></div><h3>Calendars & appointment automation</h3><p>I set up booking experiences that help prospects schedule time and help teams stay informed before and after an appointment.</p><ul><li>Calendar and availability configuration</li><li>Booking pages and appointment routing</li><li>Confirmation, reminder and follow-up messages</li><li>Team notifications and appointment workflows</li></ul></article>
+<article class="about-service about-reveal"><div class="about-service-top"><span>05</span><span>INTEGRATION & DATA</span></div><h3>CRM migration & platform integrations</h3><p>I help reduce disconnected tools by moving customer information carefully and connecting the applications involved in a business process.</p><ul><li>CRM imports, migration and contact organisation</li><li>Make.com, Zapier and n8n automations</li><li>Webhooks, APIs and third-party integrations</li><li>Stripe and other service connections</li></ul></article>
+<article class="about-service about-reveal"><div class="about-service-top"><span>06</span><span>MARKETING & AI</span></div><h3>Email campaigns, reporting & AI workflows</h3><p>I support the communication and visibility around the customer journey, including practical AI-assisted interactions where they make sense.</p><ul><li>Email campaigns and broadcast setup</li><li>Campaign, workflow and pipeline review</li><li>AI chatbots and Vapi voice integrations</li><li>Twilio, Mailgun and messaging configuration</li></ul></article>
+</div>
+</section>
+
+<section class="about-section about-stack">
+<div class="about-reveal"><div class="eyebrow">TOOLS & TECHNOLOGY</div><h2>The right tools, connected to the right process.</h2><p>I work across CRM, automation, communication and integration platforms. The tool choice depends on the workflow, the existing setup and what the business needs to achieve — not on adding technology for its own sake.</p></div>
+<div class="stack-groups about-reveal">
+<div class="stack-group"><small>CRM & CUSTOMER MANAGEMENT</small><strong>GoHighLevel · Pipelines · Contacts · Calendars · Snapshots</strong></div>
+<div class="stack-group"><small>AUTOMATION & INTEGRATION</small><strong>Make.com · Zapier · n8n · Webhooks · APIs</strong></div>
+<div class="stack-group"><small>MESSAGING & COMMUNICATION</small><strong>Twilio · Mailgun · Email · SMS · A2P 10DLC</strong></div>
+<div class="stack-group"><small>PAYMENTS & AI</small><strong>Stripe · Vapi · AI chat workflows</strong></div>
+</div>
+</section>
+
+<section class="about-section about-approach">
+<div class="about-reveal"><div class="eyebrow">HOW I WORK</div><h2>A considered process, from understanding to handover.</h2><p>I keep the work collaborative and structured. Before building, I want to understand the existing process, the people who will use the system and the outcome the business is looking for.</p></div>
+<div class="about-steps about-reveal">
+<div class="about-step"><b>01 / DISCOVER</b><h3>Understand the business</h3><p>Review the current workflow, identify friction points and agree on the result the system should support.</p></div>
+<div class="about-step"><b>02 / MAP</b><h3>Plan the solution</h3><p>Outline the CRM structure, customer journey, automation logic and any required integrations.</p></div>
+<div class="about-step"><b>03 / IMPLEMENT</b><h3>Build and connect</h3><p>Configure the platform, create workflows, connect tools and organise the relevant data.</p></div>
+<div class="about-step"><b>04 / TEST & REFINE</b><h3>Check the details</h3><p>Test the important paths, review the experience and refine the setup before handover.</p></div>
+</div>
+</section>
+
+<section class="about-section about-education">
+<div class="about-reveal"><div class="eyebrow">BACKGROUND</div><h2>A structured way of thinking.</h2><p>My academic background is in engineering. It is part of my story, while my professional focus today is firmly on CRM implementation, business automation and connected digital systems.</p></div>
+<div class="education-card about-reveal"><div><strong>B.Tech, Chemical Engineering</strong><span>Ladoke Akintola University of Technology (LAUTECH)</span></div><div class="education-year">2023</div></div>
+</section>
+
+<section class="about-cta about-reveal"><div><div class="eyebrow">LET'S TALK ABOUT YOUR SYSTEMS</div><h2>Have leads slipping through the cracks or processes taking too much manual effort?</h2><p>Tell me what is happening in your business and what you want to improve. We can discuss a practical CRM, automation or integration solution built around your needs.</p></div><a class="btn" href="/favouriteboi/contact/">Start a conversation ↗</a></section>
+</main>
+<footer class="foot"><div class="wrap">Emmanuel Ayomide · CRM & Business Automation Specialist<div class="footnav"><a href="/favouriteboi/">Home</a><a href="/favouriteboi/about/">About</a><a href="/favouriteboi/services/">Services</a><a href="/favouriteboi/portfolio/">Portfolio</a><a href="/favouriteboi/testimonials/">Testimonials</a><a href="/favouriteboi/contact/">Contact</a><a href="https://www.linkedin.com/in/emmanuel-ayomide-2a2111414">LinkedIn</a><a href="https://www.upwork.com/freelancers/~0177763eb9f5b6498c">Upwork</a></div><p>© 2026 Emmanuel Ayomide</p></div></footer>
+<script>
+(function(){
+ const items=document.querySelectorAll('.about-reveal');
+ if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches){items.forEach(el=>el.classList.add('is-visible'));return;}
+ const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target);}})},{threshold:.12,rootMargin:'0px 0px -35px 0px'});
+ items.forEach((el,i)=>{el.style.transitionDelay=(i%3)*90+'ms';observer.observe(el);});
+})();
+</script>
+</body></html>
