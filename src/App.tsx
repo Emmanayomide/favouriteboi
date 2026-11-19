@@ -1,28 +1,51 @@
-import { useState } from 'react';
-import { ArrowUpRight, Menu, X, Workflow, Layers, CalendarDays, Plug, Bot, BarChart3, Linkedin, Mail, MessageCircle, MapPin, ExternalLink, CheckCircle2 } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { ArrowUpRight, Menu, X, Workflow, Layers, CalendarDays, Plug, Bot, BarChart3, Linkedin, Mail, MessageCircle, ExternalLink, CheckCircle2, ArrowDownRight, MoveUpRight, Zap, Target, Route, Gauge, Sparkles } from 'lucide-react';
 
 const WHATSAPP = 'https://wa.me/2347075246775';
 const EMAIL = 'mailto:emmanayomide27@gmail.com';
 const LINKEDIN = 'https://www.linkedin.com/in/emmanuel-ayomide-2a2111414';
 const UPWORK = 'https://www.upwork.com/freelancers/~0177763eb9f5b6498c';
 const CALENDLY = 'https://calendly.com/emmanuelautomationhub/new-meeting';
+const asset = (name: string) => \`\${import.meta.env.BASE_URL}assets/\${name}\`;
 
-const services = [
-  { icon: Workflow, title: 'GoHighLevel CRM setup', text: 'Configure a CRM that reflects how your business handles enquiries, customers and opportunities.', points: ['Pipelines and opportunity stages', 'Tags, custom fields and contact organization', 'Calendars, forms and user permissions'] },
-  { icon: Layers, title: 'Funnels and lead capture', text: 'Create clear journeys that turn interest into enquiries, bookings and conversations.', points: ['Landing pages and funnel pages', 'Forms, surveys and booking pages', 'Lead source and campaign connections'] },
-  { icon: CalendarDays, title: 'Workflow automation', text: 'Reduce repetitive admin with dependable follow-up and internal processes.', points: ['Email and SMS sequences', 'Missed-call text-back and reminders', 'Lead routing, alerts and nurture workflows'] },
-  { icon: Plug, title: 'Integrations and migration', text: 'Connect your CRM with the tools your team already uses and move data carefully.', points: ['Make, Zapier, n8n and webhooks', 'Stripe, Twilio and Mailgun connections', 'CRM migration and data organization'] },
-  { icon: Bot, title: 'AI chat and voice workflows', text: 'Add practical AI support to lead engagement and customer communication.', points: ['AI chat assistants', 'Vapi voice integrations', 'Lead qualification and handoff flows'] },
-  { icon: BarChart3, title: 'Campaigns and reporting', text: 'Make campaign activity and pipeline progress easier to understand.', points: ['Email campaign setup', 'Engagement and pipeline reporting', 'Workflow review and optimization'] },
+const capabilities = [
+  { n:'01', icon:Workflow, title:'CRM foundations', text:'A clear home for every contact, conversation and opportunity.', detail:'GoHighLevel setup · Pipelines · Contact structure' },
+  { n:'02', icon:Zap, title:'Follow-up that moves', text:'Thoughtful automations that keep leads from going quiet.', detail:'Email & SMS · Lead routing · Reminders' },
+  { n:'03', icon:Route, title:'Connected journeys', text:'Forms, funnels, calendars and tools working together.', detail:'Funnels · Booking · Integrations' },
+  { n:'04', icon:Gauge, title:'Visibility & control', text:'A more useful view of activity, progress and next steps.', detail:'Campaigns · Reporting · Optimisation' },
 ];
 
-const tools = ['GoHighLevel', 'Make.com', 'Zapier', 'n8n', 'Vapi', 'Twilio', 'Mailgun', 'Stripe', 'HubSpot', 'Salesforce', 'WordPress'];
+const projects = [
+  { image:'workflow-dashboard.webp', type:'CRM & AUTOMATION', title:'GoHighLevel CRM ecosystem', text:'A connected CRM environment with lead-generation workflows, appointment processes, live chat and review campaign components.', tags:['GoHighLevel','CRM setup','Automation'], size:'project-wide' },
+  { image:'neogadget-store.webp', type:'WEB EXPERIENCE', title:'NeoGadget e-commerce', text:'A technology retail website concept with product-led sections, promotional content and a structured shopping experience.', tags:['Website design','E-commerce','UX'], size:'' },
+  { image:'emmy-car-hub.webp', type:'WEB EXPERIENCE', title:'Emmy Car Hub', text:'An automotive website concept organised around vehicle discovery, dealership information and customer enquiries.', tags:['Website design','Automotive','Lead capture'], size:'' },
+];
+
+const tools = ['GoHighLevel','Make.com','Zapier','n8n','Vapi','Twilio','Mailgun','Stripe','HubSpot','Salesforce','WordPress'];
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [form, setForm] = useState({ name: '', email: '', business: '', message: '' });
+  const [form, setForm] = useState({ name:'', email:'', business:'', message:'' });
   const [error, setError] = useState('');
   const closeMenu = () => setMenuOpen(false);
+
+  useEffect(() => {
+    const nodes = Array.from(document.querySelectorAll<HTMLElement>('[data-reveal]'));
+    if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      nodes.forEach(node => node.classList.add('is-visible'));
+      return;
+    }
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14, rootMargin: '0px 0px -48px 0px' });
+    nodes.forEach(node => observer.observe(node));
+    return () => observer.disconnect();
+  }, []);
 
   function submit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -30,69 +53,96 @@ function App() {
       setError('Please complete your name, email and project details.');
       return;
     }
-    const message = ['Hello Emmanuel, I would like to discuss a project.', '', 'Name: ' + form.name, 'Email: ' + form.email, 'Business: ' + (form.business || 'Not specified'), 'Project: ' + form.message].join('\n');
+    const message = ['Hello Emmanuel, I would like to discuss a project.','','Name: '+form.name,'Email: '+form.email,'Business: '+(form.business || 'Not specified'),'Project: '+form.message].join('\\n');
     setError('');
     window.open(WHATSAPP + '?text=' + encodeURIComponent(message), '_blank', 'noopener,noreferrer');
   }
 
-  return <div className="site-shell">
+  return <div className="site-shell home-motion" id="home">
     <div className="top-note"><span className="status-dot" /> Available for CRM and automation projects <span className="top-separator">·</span> Nigeria · Remote worldwide</div>
     <header className="site-header">
       <a className="brand" href="#home" onClick={closeMenu}><span className="brand-symbol">EA<span>.</span></span><span><strong>EMMANUEL AYOMIDE</strong><small>CRM & BUSINESS AUTOMATION</small></span></a>
       <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle navigation">{menuOpen ? <X /> : <Menu />}</button>
       <nav className={menuOpen ? 'main-nav open' : 'main-nav'} aria-label="Main navigation">
-        <a href="/favouriteboi/">Home</a><a href="/favouriteboi/about/">About</a><a href="/favouriteboi/services/">Services</a><a href="/favouriteboi/portfolio/">Portfolio</a><a href="/favouriteboi/testimonials/">Testimonials</a><a className="nav-contact" href="/favouriteboi/contact/">Contact <ArrowUpRight size={15}/></a>
+        <a href="#home" onClick={closeMenu}>Home</a><a href="/favouriteboi/about/" onClick={closeMenu}>About</a><a href="#capabilities" onClick={closeMenu}>Expertise</a><a href="#projects" onClick={closeMenu}>Work</a><a href="/favouriteboi/testimonials/" onClick={closeMenu}>Feedback</a><a className="nav-contact" href="/favouriteboi/contact/" onClick={closeMenu}>Let’s talk <ArrowUpRight size={15}/></a>
       </nav>
     </header>
 
     <main>
-      <section className="hero wrap" id="home">
-        <div className="hero-copy">
-          <p className="eyebrow">CRM & BUSINESS AUTOMATION SPECIALIST</p>
-          <h1>Build a business system that <span>works as one.</span></h1>
-          <p className="hero-intro">I design and build connected CRM and automation systems that help businesses capture enquiries, follow up consistently and manage the customer journey with less manual work.</p>
-          <div className="hero-actions"><a className="button primary" href={WHATSAPP} target="_blank" rel="noreferrer">Let’s discuss your setup <ArrowUpRight size={17}/></a><a className="button secondary" href="#projects">Explore selected work</a></div>
-          <div className="hero-meta"><span><CheckCircle2 size={16}/> GoHighLevel CRM</span><span><CheckCircle2 size={16}/> Workflow automation</span><span><CheckCircle2 size={16}/> Funnels & integrations</span></div>
-        </div>
-        <aside className="hero-aside">
-          <div className="system-preview-top"><span className="preview-indicator"><i/> SYSTEM OVERVIEW</span><span className="preview-dots">•••</span></div>
-          <div className="preview-heading"><div><small>LEAD MANAGEMENT</small><strong>One connected journey</strong></div><span className="preview-mark"><Workflow size={19}/></span></div>
-          <div className="preview-flow">
-            <div className="preview-node"><span className="node-icon"><Layers size={15}/></span><span><b>New enquiry</b><small>Form · website · campaign</small></span><CheckCircle2 size={15}/></div>
-            <div className="preview-connector"><i/></div>
-            <div className="preview-node"><span className="node-icon"><Workflow size={15}/></span><span><b>CRM & pipeline</b><small>Contact · tags · ownership</small></span><CheckCircle2 size={15}/></div>
-            <div className="preview-connector"><i/></div>
-            <div className="preview-node"><span className="node-icon"><MessageCircle size={15}/></span><span><b>Automated follow-up</b><small>Email · SMS · reminders</small></span><CheckCircle2 size={15}/></div>
-            <div className="preview-connector"><i/></div>
-            <div className="preview-node preview-node-final"><span className="node-icon"><CalendarDays size={15}/></span><span><b>Booking & next step</b><small>Clear handoff for your team</small></span><ArrowUpRight size={15}/></div>
+      <section className="hero-v3">
+        <div className="hero-v3-grid" aria-hidden="true"></div>
+        <div className="hero-v3-inner wrap">
+          <div className="hero-v3-copy">
+            <p className="eyebrow light-eyebrow" data-reveal>CRM STRATEGY · SYSTEMS · AUTOMATION</p>
+            <h1 data-reveal style={{'--reveal-delay':'100ms'} as React.CSSProperties}>Make every part of your <em>customer journey</em> work together.</h1>
+            <p className="hero-v3-intro" data-reveal style={{'--reveal-delay':'220ms'} as React.CSSProperties}>I design and build connected CRM and automation systems that help businesses capture enquiries, follow up consistently and manage the work behind every customer relationship.</p>
+            <div className="hero-v3-actions" data-reveal style={{'--reveal-delay':'340ms'} as React.CSSProperties}><a className="button primary light-button" href={WHATSAPP} target="_blank" rel="noreferrer">Discuss a project <ArrowUpRight size={17}/></a><a className="text-link light-link" href="#projects">Explore selected work <ArrowDownRight size={16}/></a></div>
+            <div className="hero-v3-foot" data-reveal style={{'--reveal-delay':'460ms'} as React.CSSProperties}><span><i/> INDEPENDENT SPECIALIST</span><span>GOHIGHLEVEL-FOCUSED</span><span>REMOTE · WORLDWIDE</span></div>
           </div>
-          <div className="preview-foot"><span>BUILT AROUND YOUR PROCESS</span><span>01 — 04</span></div>
-        </aside>
+          <div className="hero-art" data-reveal style={{'--reveal-delay':'260ms'} as React.CSSProperties} aria-label="Illustration of connected business systems">
+            <div className="art-orbit orbit-one"></div><div className="art-orbit orbit-two"></div>
+            <div className="art-label art-label-top">THE CONNECTED BUSINESS</div>
+            <div className="art-core"><span className="core-glow"></span><Workflow size={36}/><b>ONE SYSTEM</b><small>Connected by design</small></div>
+            <div className="art-node node-a"><span><Target size={18}/></span><b>Capture</b><small>New enquiries</small></div>
+            <div className="art-node node-b"><span><Layers size={18}/></span><b>Organise</b><small>CRM & pipeline</small></div>
+            <div className="art-node node-c"><span><Zap size={18}/></span><b>Automate</b><small>Follow-up</small></div>
+            <div className="art-node node-d"><span><CalendarDays size={18}/></span><b>Convert</b><small>Booking & handoff</small></div>
+            <div className="art-connector con-a"></div><div className="art-connector con-b"></div><div className="art-connector con-c"></div><div className="art-connector con-d"></div>
+            <div className="art-label art-label-bottom">FROM FIRST TOUCH TO NEXT ACTION <span>↗</span></div>
+          </div>
+        </div>
+        <div className="hero-bottom-line"><span>01 — 05</span><span>SCROLL TO EXPLORE</span><span className="scroll-line"></span></div>
       </section>
 
-      <section className="trust-band"><div className="wrap trust-content"><span className="eyebrow">TOOLS I WORK WITH</span><div className="tool-list">{tools.map(tool => <span key={tool}>{tool}</span>)}</div></div></section>
-
-      <section className="journey-strip"><div className="wrap journey-inner"><div className="journey-intro"><p className="eyebrow">A CONNECTED APPROACH</p><h2>From first contact to <span>the next right action.</span></h2></div><div className="journey-steps"><div><b>01</b><strong>Capture</strong><small>Bring enquiries into one place.</small></div><div><b>02</b><strong>Organise</strong><small>Give every lead a clear status.</small></div><div><b>03</b><strong>Automate</strong><small>Make follow-up more consistent.</small></div><div><b>04</b><strong>Improve</strong><small>See what needs attention next.</small></div></div></div></section>
-
-      <section className="section wrap" id="about">
-        <div className="section-head"><div><p className="eyebrow">01 / ABOUT</p><h2>Better technology should make <span>work feel simpler.</span></h2></div><p className="section-summary">I bring CRM configuration, automation and connected tools together to create smoother customer journeys and more dependable operations.</p></div>
-        <div className="about-layout"><div className="about-portrait"><img src={`${import.meta.env.BASE_URL}assets/emmanuel-ayomide-headshot.webp?v=5`} alt="Portrait of Emmanuel Ayomide"/></div><div className="about-facts"><div className="fact"><span>01</span><strong>CRM-first thinking</strong><p>Structure customer data and pipelines so teams can see what needs attention.</p></div><div className="fact"><span>02</span><strong>Practical automation</strong><p>Build workflows around real processes, with clear triggers, actions and handoffs.</p></div><div className="fact"><span>03</span><strong>Connected operations</strong><p>Bring forms, calendars, communication tools and integrations into one working system.</p></div></div>
-          <div className="about-copy"><p>I'm Emmanuel Ayomide, a CRM & Business Automation Specialist helping businesses organise customer relationships, simplify everyday processes and get more from their technology.</p><p>I work primarily with GoHighLevel, building CRM setups, pipelines, automated follow-ups, funnels and booking systems. I also connect business tools using platforms such as Make.com, Twilio, Mailgun and other integrations.</p><p>My approach is straightforward: understand the business need, build a suitable solution, and test it so the system is practical to use and manage.</p><div className="about-links"><a href={LINKEDIN} target="_blank" rel="noreferrer"><Linkedin size={17}/> LinkedIn <ExternalLink size={13}/></a><a href={UPWORK} target="_blank" rel="noreferrer">Upwork profile <ExternalLink size={13}/></a></div></div>
+      <section className="problem-band">
+        <div className="wrap problem-grid">
+          <div className="problem-title" data-reveal><p className="eyebrow">THE OPERATIONAL GAP</p><h2>Good leads deserve <span>better systems.</span></h2></div>
+          <div className="problem-copy" data-reveal style={{'--reveal-delay':'140ms'} as React.CSSProperties}><p>Enquiries arrive from different places. Follow-ups depend on memory. Customer information gets scattered across tools.</p><p>I bring those moving parts into a clearer process—so your team can spend less time chasing admin and more time moving conversations forward.</p></div>
+          <div className="problem-stamp" data-reveal style={{'--reveal-delay':'260ms'} as React.CSSProperties}><Sparkles size={20}/><span>CLARITY<br/>THROUGH<br/>CONNECTION</span></div>
         </div>
       </section>
 
-      <section className="section services-section" id="services"><div className="wrap"><div className="section-head"><div><p className="eyebrow">02 / SERVICES</p><h2>Systems built around <span>business needs.</span></h2></div><p className="section-summary">Support across the customer journey, from first enquiry through follow-up, booking and reporting.</p></div><div className="services-grid">{services.map((service, i) => { const Icon = service.icon; return <article className="service-card" key={service.title}><div className="service-top"><span>0{i + 1}</span><Icon size={22}/></div><h3>{service.title}</h3><p>{service.text}</p><ul>{service.points.map(point => <li key={point}>{point}</li>)}</ul></article>; })}</div></div></section>
-
-      <section className="section wrap" id="projects"><div className="section-head"><div><p className="eyebrow">03 / SELECTED PROJECT</p><h2>Real work. <span>Clear thinking.</span></h2></div><p className="section-summary">A look at how I structure CRM workflows and customer journeys, alongside selected website projects.</p></div>
-        <article className="project-card"><div className="project-image"><img src="/favouriteboi/assets/lead-followup-workflow.png" alt="GoHighLevel workflow builder showing a form submission trigger, contact tagging, internal notification, wait steps and email follow-up"/></div><div className="project-details"><p className="eyebrow">GOHIGHLEVEL / WORKFLOW AUTOMATION</p><h3>Lead response and follow-up workflow</h3><p>A workflow configured around a form submission, with contact tagging, internal notifications, timed steps and email follow-up. The structure helps keep lead handling consistent after an enquiry is received.</p><div className="project-tags"><span>Form trigger</span><span>Contact tagging</span><span>Internal alerts</span><span>Email follow-up</span></div><div className="project-caption">Implementation screenshot · GoHighLevel workflow builder</div></div></article>
-        <p className="project-note">Additional project screenshots and case studies will be added as they are prepared. No illustrative mockups or unrelated stock visuals are used here.</p>
+      <section className="section-v3 capabilities-section" id="capabilities">
+        <div className="wrap">
+          <div className="section-head-v3" data-reveal><div><p className="eyebrow">01 / WHAT I BUILD</p><h2>Connected systems for <em>the whole journey.</em></h2></div><p>Not disconnected tools. A considered setup where each part supports the next.</p></div>
+          <div className="capability-list">
+            {capabilities.map((item,i) => { const Icon=item.icon; return <article className="capability-row" key={item.n} data-reveal style={{'--reveal-delay':(i*100)+'ms'} as React.CSSProperties}><span className="cap-number">{item.n}</span><span className="cap-icon"><Icon size={23}/></span><div className="cap-main"><h3>{item.title}</h3><p>{item.text}</p></div><div className="cap-detail">{item.detail}</div><ArrowUpRight className="cap-arrow" size={20}/></article>; })}
+          </div>
+          <div className="capability-link" data-reveal><a className="text-link" href="/favouriteboi/services/">Explore all services <ArrowUpRight size={16}/></a></div>
+        </div>
       </section>
 
-      <section className="section testimonials-section" id="testimonials"><div className="wrap testimonial-inner"><div><p className="eyebrow">04 / TESTIMONIALS</p><h2>Client feedback, <span>in the right place.</span></h2><p className="testimonial-copy">You can view the feedback published on my Upwork profile. I’m keeping this section linked to the original platform rather than reproducing reviews that aren't displayed here yet.</p></div><a className="button primary" href={UPWORK} target="_blank" rel="noreferrer">View Upwork feedback <ArrowUpRight size={17}/></a></div></section>
+      <section className="process-section">
+        <div className="wrap">
+          <div className="section-head-v3 process-heading" data-reveal><div><p className="eyebrow light-eyebrow">02 / HOW I WORK</p><h2>From a messy process <em>to a working system.</em></h2></div><p>Every build starts with understanding how the business works today—not forcing it into a generic template.</p></div>
+          <div className="process-track">
+            {[['01','Discover','Understand the goal, tools and current workflow.'],['02','Structure','Map the customer journey and system logic.'],['03','Build','Configure the CRM, automations and connections.'],['04','Test','Check triggers, messages, handoffs and edge cases.'],['05','Refine','Make practical adjustments for day-to-day use.']].map((step,i)=><div className="process-step" key={step[0]} data-reveal style={{'--reveal-delay':(i*110)+'ms'} as React.CSSProperties}><div className="process-dot"><span>{step[0]}</span></div><h3>{step[1]}</h3><p>{step[2]}</p></div>)}
+          </div>
+        </div>
+      </section>
 
-      <section className="section wrap contact-section" id="contact"><div className="section-head"><div><p className="eyebrow">05 / CONTACT</p><h2>Let’s make your systems <span>work better.</span></h2></div><p className="section-summary">Share a little about your business and the CRM, workflow or customer process you want to improve.</p></div><div className="contact-layout"><div className="contact-info"><a href={WHATSAPP} target="_blank" rel="noreferrer"><MessageCircle/> <span><strong>WhatsApp</strong><small>Start a conversation</small></span><ArrowUpRight/></a><a href={EMAIL}><Mail/> <span><strong>Email</strong><small>Send a project enquiry</small></span><ArrowUpRight/></a><a href={LINKEDIN} target="_blank" rel="noreferrer"><Linkedin/> <span><strong>LinkedIn</strong><small>Connect professionally</small></span><ArrowUpRight/></a><a href={UPWORK} target="_blank" rel="noreferrer"><ExternalLink/> <span><strong>Upwork</strong><small>Profile and client feedback</small></span><ArrowUpRight/></a><a href={CALENDLY} target="_blank" rel="noreferrer"><CalendarDays/> <span><strong>Book a call</strong><small>Choose a convenient time</small></span><ArrowUpRight/></a><div className="location"><MapPin/><span>Abuja, Nigeria · Working remotely worldwide</span></div></div>
-        <form className="contact-form" onSubmit={submit}><h3>Project enquiry</h3><p>Complete the details and continue the conversation on WhatsApp.</p><label>Your name<input value={form.name} onChange={e => setForm({...form, name:e.target.value})} placeholder="Your name" required/></label><label>Email address<input type="email" value={form.email} onChange={e => setForm({...form, email:e.target.value})} placeholder="you@company.com" required/></label><label>Business / company <span>(optional)</span><input value={form.business} onChange={e => setForm({...form, business:e.target.value})} placeholder="Business name"/></label><label>What do you need help with?<textarea rows={4} value={form.message} onChange={e => setForm({...form, message:e.target.value})} placeholder="Tell me about the CRM, workflow or project..." required/></label>{error && <p className="form-error">{error}</p>}<button className="button primary" type="submit">Continue to WhatsApp <ArrowUpRight size={16}/></button></form></div></section>
+      <section className="section-v3 projects-section" id="projects">
+        <div className="wrap">
+          <div className="section-head-v3" data-reveal><div><p className="eyebrow">03 / SELECTED WORK</p><h2>Built with intention. <em>Designed to work.</em></h2></div><p>A selection of CRM implementation and web design examples. Each reflects a different part of my work.</p></div>
+          <div className="project-grid-v3">
+            {projects.map((project,i)=><article className={'project-v3 '+project.size} key={project.title} data-reveal style={{'--reveal-delay':(i*130)+'ms'} as React.CSSProperties}><a className="project-visual" href={asset(project.image)} target="_blank" rel="noreferrer"><img src={asset(project.image)} alt={project.title+' project screenshot'}/><span className="image-open"><MoveUpRight size={19}/></span></a><div className="project-v3-info"><div className="project-type">{project.type}<span>0{i+1}</span></div><h3>{project.title}</h3><p>{project.text}</p><div className="project-tags">{project.tags.map(tag=><span key={tag}>{tag}</span>)}</div></div></article>)}
+          </div>
+          <div className="projects-foot" data-reveal><span>SELECTED PROJECT EXAMPLES · MORE DETAILS ON REQUEST</span><a className="text-link" href="/favouriteboi/portfolio/">View project gallery <ArrowUpRight size={16}/></a></div>
+        </div>
+      </section>
+
+      <section className="about-v3">
+        <div className="wrap about-v3-grid">
+          <div className="about-v3-image" data-reveal><img src={asset('emmanuel-ayomide-headshot.webp')} alt="Emmanuel Ayomide"/><div className="portrait-caption"><span>EMMANUEL AYOMIDE</span><small>CRM & BUSINESS AUTOMATION SPECIALIST</small></div></div>
+          <div className="about-v3-copy" data-reveal style={{'--reveal-delay':'140ms'} as React.CSSProperties}><p className="eyebrow">04 / THE PERSON BEHIND THE SYSTEMS</p><h2>Hands-on thinking.<br/><em>Practical execution.</em></h2><p>I'm Emmanuel, an independent CRM & Business Automation Specialist focused on making business processes easier to manage through thoughtful systems and automation.</p><p>My work is centred on GoHighLevel, supported by integrations and tools that help different parts of a customer journey work together. I value clear communication, careful testing and solutions that make sense for the people using them.</p><div className="about-v3-links"><a href="/favouriteboi/about/">More about me <ArrowUpRight size={15}/></a><a href={LINKEDIN} target="_blank" rel="noreferrer">LinkedIn <ExternalLink size={13}/></a><a href={UPWORK} target="_blank" rel="noreferrer">Upwork <ExternalLink size={13}/></a></div></div>
+        </div>
+      </section>
+
+      <section className="tools-section"><div className="wrap tools-v3"><div data-reveal><p className="eyebrow">05 / THE TOOLKIT</p><h2>The right tools.<br/><em>Connected thoughtfully.</em></h2></div><div className="tools-v3-list" data-reveal style={{'--reveal-delay':'140ms'} as React.CSSProperties}>{tools.map((tool,i)=><span key={tool} style={{'--reveal-delay':(i*35)+'ms'} as React.CSSProperties}>{tool}</span>)}</div></div></section>
+
+      <section className="closing-section" id="contact"><div className="closing-orb" aria-hidden="true"></div><div className="wrap closing-inner" data-reveal><p className="eyebrow light-eyebrow">HAVE A PROCESS TO IMPROVE?</p><h2>Let's make your<br/><em>systems work together.</em></h2><p>Tell me what you're trying to organise, automate or connect. We can start with the problem and work towards the right setup.</p><div className="closing-actions"><a className="button primary light-button" href={WHATSAPP} target="_blank" rel="noreferrer">Start a conversation <ArrowUpRight size={17}/></a><a className="closing-email" href={EMAIL}>Or email me <ArrowUpRight size={14}/></a></div></div></section>
     </main>
+
     <footer className="footer"><div className="wrap footer-inner"><a className="brand" href="#home"><span className="brand-symbol">EA<span>.</span></span><span><strong>EMMANUEL AYOMIDE</strong><small>CRM & BUSINESS AUTOMATION</small></span></a><p>Practical CRM systems. Thoughtful automation.</p><div className="footer-social"><a href={LINKEDIN} aria-label="LinkedIn" target="_blank" rel="noreferrer"><Linkedin/></a><a href={UPWORK} aria-label="Upwork" target="_blank" rel="noreferrer"><ExternalLink/></a><a href={WHATSAPP} aria-label="WhatsApp" target="_blank" rel="noreferrer"><MessageCircle/></a><a href={EMAIL} aria-label="Email"><Mail/></a></div><small>© 2026 Emmanuel Ayomide</small></div></footer>
   </div>;
 }
